@@ -7,9 +7,11 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  test:
 
-    runs-on: macos-latest
+    name: Test
+#     runs-on: macos-latest
+    runs-on: ubuntu-latest
 
     strategy:
       matrix:
