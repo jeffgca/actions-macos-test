@@ -1,4 +1,4 @@
-name: Node.js CI
+name: Node.js macOS
 
 on:
   push:
@@ -10,8 +10,8 @@ jobs:
   test:
 
     name: Test
-#     runs-on: macos-latest
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
+
 
     strategy:
       matrix:
