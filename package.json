@@ -1,0 +1,26 @@
+{
+  "name": "actions-macos-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/therealjeffg/actions-macos-test.git"
+  },
+  "author": "Jeff Griffiths ( @therealjeffg )",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/therealjeffg/actions-macos-test/issues"
+  },
+  "homepage": "https://github.com/therealjeffg/actions-macos-test#readme",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "midi": "^1.0.3"
+  }
+}
