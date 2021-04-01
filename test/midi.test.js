@@ -4,8 +4,8 @@ const midi = require('midi');
 
 let testInterface, name = 'testInterface';
 
+// returns a promise that resolves once the test interface has been created.
 function fakeMidiInterface() {
-  console.log('in fakeMidiInterface');
   return new Promise((resolve, reject) => {
     let _in = new midi.Input();
     let _out = new midi.Output();
@@ -23,10 +23,12 @@ function fakeMidiInterface() {
 
 beforeAll(() => {
   console.log('in beforeAll');
+  // create test interface
   return fakeMidiInterface();
 });
 
 afterAll(() => {
+  // close the port handles we open, otherwise the tests will time out
   testInterface.in.closePort();
   testInterface.out.closePort();
 });
@@ -34,7 +36,6 @@ afterAll(() => {
 test('test we get some info', (done) => {
   
   let info = new Info();
-  console.log(info.inputs, info.outputs, info.devices);
 
   expect(_.has(info.inputs, name)).toEqual(true);
   expect(_.has(info.inputs[name], 'in')).toEqual(true);
@@ -46,6 +47,5 @@ test('test we get some info', (done) => {
   expect(_.has(info.devices[name], 'in')).toEqual(true);
   expect(_.has(info.devices[name], 'out')).toEqual(true);
 
-  
   done();
 });
